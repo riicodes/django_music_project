@@ -1,0 +1,31 @@
+{% extends "music/base.html"%}
+{% block content %}
+<div class="row">
+	{% for album in albums %}
+	<div class="col-lg-4 col-md-6 album">
+		<div class="card">
+			<img src="{{ album.album_logo.url }}" class="card-img-top p-2" alt="..." height="350">
+			<div class="card-body pt-1 pb-1">
+				<div class="d-flex bd-highlight">
+					<h5 class="card-title">{{ album.album_title }}</h5>
+					<p class="card-text ms-2">by {{ album.artist }}</p>
+				</div>
+				<div class="d-flex bd-highlight mt-2">
+					<div class="pb-2 bd-highlight">
+						<a href="{% url 'music:album-detail' album.id %}" class="btn btn-outline-secondary">View
+							Detail</a>
+					</div>
+
+					<div class="ms-auto bd-highlight">
+						<a class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#delete-album-{{ album.id }}"><i
+								class="fas fa-trash"></i></a>
+					</div>
+					{% include 'music/album-delete.html' %}
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	{% endfor %}
+</div>
+{% endblock %}

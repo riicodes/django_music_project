@@ -1,0 +1,23 @@
+{% extends "music/base.html"%}
+{% block content %}
+<div class="row">
+	<div class="col-md-3 album">
+		<div class="card">
+			<img src="{{ album.album_logo.url }}" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">{{ album.album_title }}</h5>
+				<p class="card-text mb-1 text-muted">Artist: {{ album.artist }}</p>
+				<p class="card-text text-muted">Genre: {{ album.genre }}</p>
+				<a href="{% url 'music:album-update' album.id %}" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt me-2"></i>Update</a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-9 songs">
+		<h4 class="mb-4">Songs</h4>
+		{% for song in album.song_set.all %}
+		<p class="rounded p-2 m-0 border border-white" id="album-song">{{ forloop.counter }}. {{ song }}</p>
+		{% endfor %}
+	</div>
+
+</div>
+{% endblock %}

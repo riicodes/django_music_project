@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+body {
+	background-color: whitesmoke;
+}
+
+.navbar-brand {
+	font-family: "Pacifico", cursive;
+}
+
+.container {
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+
+.album {
+	margin-bottom: 10px;
+}
+.create-form {
+	background-color: white;
+	padding: 8px 15px;
+}
+
+.card {
+	-webkit-box-shadow: 3px 3px 12px -1px rgba(171, 171, 171, 1);
+	-moz-box-shadow: 3px 3px 12px -1px rgba(171, 171, 171, 1);
+	box-shadow: 3px 3px 12px -1px rgba(171, 171, 171, 1);
+}
+
+.songs {
+	background-color: white;
+	height: fit-content;
+	padding: 5px 15px;
+}
+
+#album-song {
+	background-color: aliceblue;
+}
